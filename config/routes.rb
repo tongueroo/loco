@@ -1,4 +1,7 @@
 Loco::Application.routes.draw do
+  root :to => 'home#index'
+  match 'best' => 'burritos#best'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

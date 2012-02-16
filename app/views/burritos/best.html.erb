@@ -1,0 +1,10 @@
+<h2>Best - Worst<h2>
+
+<div id="content">
+<% @burritos.each do |burrito| %>
+  <div>
+    <%= image_tag(burrito.photo.url, :height => 300, :width => 200) %>
+    <%= burrito.name %> 
+  </div>
+<% end %>
+</div>
