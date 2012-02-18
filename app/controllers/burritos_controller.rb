@@ -7,33 +7,18 @@ class BurritosController < ApplicationController
   # GET /burritos.json
   def index
     @burritos = Burrito.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @burritos }
-    end
   end
 
   # GET /burritos/1
   # GET /burritos/1.json
   def show
     @burrito = Burrito.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @burrito }
-    end
   end
 
   # GET /burritos/new
   # GET /burritos/new.json
   def new
     @burrito = Burrito.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @burrito }
-    end
   end
 
   # GET /burritos/1/edit
@@ -46,14 +31,10 @@ class BurritosController < ApplicationController
   def create
     @burrito = Burrito.new(params[:burrito])
 
-    respond_to do |format|
-      if @burrito.save
-        format.html { redirect_to @burrito, notice: 'Burrito was successfully created.' }
-        format.json { render json: @burrito, status: :created, location: @burrito }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @burrito.errors, status: :unprocessable_entity }
-      end
+    if @burrito.save
+      redirect_to @burrito, notice: 'Burrito was successfully created.'
+    else
+      render action: "new"
     end
   end
 
@@ -62,14 +43,10 @@ class BurritosController < ApplicationController
   def update
     @burrito = Burrito.find(params[:id])
 
-    respond_to do |format|
-      if @burrito.update_attributes(params[:burrito])
-        format.html { redirect_to @burrito, notice: 'Burrito was successfully updated.' }
-        format.json { head :ok }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @burrito.errors, status: :unprocessable_entity }
-      end
+    if @burrito.update_attributes(params[:burrito])
+      redirect_to @burrito, notice: 'Burrito was successfully updated.'
+    else
+      render action: "edit"
     end
   end
 
@@ -79,9 +56,6 @@ class BurritosController < ApplicationController
     @burrito = Burrito.find(params[:id])
     @burrito.destroy
 
-    respond_to do |format|
-      format.html { redirect_to burritos_url }
-      format.json { head :ok }
-    end
+    redirect_to burritos_url
   end
 end
