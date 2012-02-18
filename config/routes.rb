@@ -1,4 +1,6 @@
 Loco::Application.routes.draw do
+  resources :burritos
+
   root :to => 'home#index'
   match 'best' => 'burritos#best'
 

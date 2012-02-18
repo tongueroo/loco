@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @burrito.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @burrito.description %>
+</p>
+
+<p>
+  <b>Meat:</b>
+  <%= @burrito.meat %>
+</p>
+
+<p>
+  <b>Rating:</b>
+  <%= @burrito.rating %>
+</p>
+
+<p>
+  <b>Position:</b>
+  <%= @burrito.position %>
+</p>
+
+
+<%= link_to 'Edit', edit_burrito_path(@burrito) %> |
+<%= link_to 'Back', burritos_path %>

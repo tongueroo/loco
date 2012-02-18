@@ -1,0 +1,31 @@
+<h1>Listing burritos</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Meat</th>
+    <th>Rating</th>
+    <th>Position</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @burritos.each do |burrito| %>
+  <tr>
+    <td><%= burrito.name %></td>
+    <td><%= burrito.description %></td>
+    <td><%= burrito.meat %></td>
+    <td><%= burrito.rating %></td>
+    <td><%= burrito.position %></td>
+    <td><%= link_to 'Show', burrito %></td>
+    <td><%= link_to 'Edit', edit_burrito_path(burrito) %></td>
+    <td><%= link_to 'Destroy', burrito, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Burrito', new_burrito_path %>
