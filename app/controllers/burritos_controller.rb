@@ -4,6 +4,7 @@ class BurritosController < ApplicationController
   end
 
   def index
+    garbage_does_not_work
     @burritos = Burrito.all
   end
 
