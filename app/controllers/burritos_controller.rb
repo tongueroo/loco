@@ -3,31 +3,22 @@ class BurritosController < ApplicationController
     @burritos = Burrito.order("position #{params[:sort]}")
   end
 
-  # GET /burritos
-  # GET /burritos.json
   def index
     @burritos = Burrito.all
   end
 
-  # GET /burritos/1
-  # GET /burritos/1.json
   def show
     @burrito = Burrito.find(params[:id])
   end
 
-  # GET /burritos/new
-  # GET /burritos/new.json
   def new
     @burrito = Burrito.new
   end
 
-  # GET /burritos/1/edit
   def edit
     @burrito = Burrito.find(params[:id])
   end
 
-  # POST /burritos
-  # POST /burritos.json
   def create
     @burrito = Burrito.new(params[:burrito])
 
@@ -38,8 +29,6 @@ class BurritosController < ApplicationController
     end
   end
 
-  # PUT /burritos/1
-  # PUT /burritos/1.json
   def update
     @burrito = Burrito.find(params[:id])
 
@@ -50,8 +39,6 @@ class BurritosController < ApplicationController
     end
   end
 
-  # DELETE /burritos/1
-  # DELETE /burritos/1.json
   def destroy
     @burrito = Burrito.find(params[:id])
     @burrito.destroy
