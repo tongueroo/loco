@@ -4,7 +4,9 @@ class BurritosController < ApplicationController
   end
 
   def index
+    logger.info("tung1")
     @burritos = Burrito.all
+    logger.info("tung2 @burritos #{@burritos.inspect}")
   end
 
   def show
