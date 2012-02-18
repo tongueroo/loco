@@ -1,5 +1,10 @@
 <h2>Best - Worst<h2>
 
+<ul>
+  <li><%= link_to("Postion asc", :sort => "asc") %></li>
+  <li><%= link_to("Postion desc", :sort => "desc") %></li>
+</ul>  
+
 <div id="content">
 <% @burritos.each do |burrito| %>
   <div>
